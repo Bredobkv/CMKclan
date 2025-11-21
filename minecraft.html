@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"/>
+  <title>Minecraft (В разработке) — 1337 Squad</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .minecraft-wrap {
+      max-width: 800px;
+      margin: 120px auto 80px;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .minecraft-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border-radius: 28px;
+      padding: 48px 32px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .minecraft-card h1 {
+      font-size: 42px;
+      margin: 0 0 20px;
+      background: linear-gradient(135deg, #ff6b35, #f7931e, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .minecraft-card p {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0 0 32px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 14px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      color: var(--text);
+      font-weight: 700;
+      cursor: pointer;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .back-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(107,53,255,0.2), 0 4px 16px rgba(0,0,0,0.3);
+      border-color: rgba(107,53,255,0.3);
+      background: rgba(255,255,255,0.1);
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 720px) {
+      .minecraft-wrap {
+        margin: 100px auto 60px;
+        padding: 24px 16px;
+      }
+      .minecraft-card {
+        padding: 32px 24px;
+      }
+      .minecraft-card h1 {
+        font-size: 32px;
+      }
+      .minecraft-card p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="dance.gif" alt="dance" class="dance-gif" id="danceGif" />
+  
+  <header class="topbar" style="position: fixed; top: 0; left: 0; right: 0;">
+    <div class="topbar-left">
+      <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="logo">1337 Squad</div>
+      </a>
+      <div class="subtitle">Minecraft • В разработке</div>
+    </div>
+  </header>
+
+  <div class="minecraft-wrap">
+    <div class="minecraft-card">
+      <h1>Minecraft</h1>
+      <p>Эта страница в разработке, но скоро здесь появятся кастомные сборки, оптимизированные модпаки и специальные конфигурации для сквада!</p>
+      <a href="index.html" class="back-btn">← Вернуться на главную</a>
+    </div>
+  </div>
+
+  <script>
+    // Dance GIF click -> play mya.mp3
+    const danceGif = document.getElementById("danceGif");
+    if(danceGif){
+      let myaAudio = new Audio("mya.mp3");
+      danceGif.style.cursor = "pointer";
+      danceGif.addEventListener("click", async () => {
+        try {
+          myaAudio.currentTime = 0;
+          await myaAudio.play();
+        } catch(err){
+          console.warn("Не удалось воспроизвести звук:", err);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

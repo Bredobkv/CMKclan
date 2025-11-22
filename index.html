@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <meta name="description" content="1337 Squad — коллекция крутых игр для сквада с современным iOS glass интерфейсом" />
+  <title>1337 Squad — iOS Glass</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- doom background video -->
+  <video id="doomVideo" class="doom-video" src="doomvideo.mp4" loop muted playsinline></video>
+
+  <!-- верхняя панель -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <div id="logo" class="logo">1337 Squad</div>
+      <div class="subtitle">Наши игры • iOS glass UI</div>
+      <img src="dance.gif" alt="dance" class="dance-gif dance-gif-inline" id="danceGif" />
+    </div>
+
+    <div class="topbar-right">
+      <button id="randomBtn" class="btn glass small">🎲 Random</button>
+      <button id="playMusic" class="btn glass small">🎵 Play Vibe</button>
+      <div class="volume-wrap">
+        <span class="volume-icon">🔊</span>
+        <input
+          type="range"
+          id="volumeSlider"
+          min="0"
+          max="100"
+          value="70"
+          class="volume-slider"
+          aria-label="Громкость"
+        />
+      </div>
+    </div>
+  </header>
+
+  <!-- главный заголовок -->
+  <section class="hero">
+    <h1>1337 Squad</h1>
+    <p class="lead">Собрано: крутые игры для сквада. Мягкий стеклянный интерфейс, как на iPhone.</p>
+  </section>
+
+  <!-- фильтры -->
+  <section class="filters" id="tagFilters" aria-label="filters"></section>
+
+  <!-- сетка игр -->
+  <main class="content">
+    <div id="gamesContainer" class="games-grid" aria-live="polite"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
